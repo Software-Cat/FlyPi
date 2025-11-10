@@ -13,7 +13,7 @@ primary_region = 'syd'
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
-  min_machines_running = 0
+  min_machines_running = 1
   processes = ['app']
 
 [[services]]
@@ -36,13 +36,13 @@ primary_region = 'syd'
     timeout = '2s'
 
 [[services]]
-  protocol = 'udp'
+  protocol = 'tcp'
   internal_port = 53
 
   [[services.ports]]
     port = 53
 
 [[vm]]
-  memory = '512mb'
+  memory = '256mb'
   cpu_kind = 'shared'
   cpus = 1
