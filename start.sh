@@ -8,4 +8,5 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 ip6tables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
 /app/tailscaled --state=/var/lib/tailscale/tailscaled.state --socket=/var/run/tailscale/tailscaled.sock &
-/app/tailscale up --auth-key=${TAILSCALE_AUTHKEY} --hostname=pihole --accept-dns=false --advertise-exit-node 
+/app/tailscale up --auth-key=${TAILSCALE_AUTHKEY} --hostname=adguard --accept-dns=false --advertise-exit-node 
+#/app/tailscale serve --service=svc:dns --https=443 https+insecure://localhost:443

@@ -1,7 +1,7 @@
 FROM adguard/adguardhome:latest
 
-ENV INTERFACE eth0
-ENV DNSMASQ_LISTENING ALL
+#ENV INTERFACE eth0
+#ENV DNSMASQ_LISTENING ALL
 
 RUN apk update && apk add ca-certificates iptables ip6tables && rm -rf /var/cache/apk/*
 
@@ -15,5 +15,5 @@ RUN mkdir -p /var/run/tailscale /var/cache/tailscale /var/lib/tailscale
 
 
 # Run on container startup. This appears broken, must manually ssh into vm and run start.sh
-USER root
-CMD ["/app/start.sh"]
+#USER root
+#CMD ["/app/start.sh"]
